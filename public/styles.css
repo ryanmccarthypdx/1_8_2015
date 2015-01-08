@@ -1,0 +1,30 @@
+
+.form-group{
+  text-align: center;
+  font-size: 20px;
+
+}
+
+.btn-scrabble{
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.img-responsive{
+  width: 100%;
+}
+
+.user_word{
+  font-weight: bold;
+  color: red;
+}
+
+.result_text{
+  text-align: center;
+  font-size: 20px;
+}
+
+.mod_h1{
+  text-align: center;
+}
