@@ -25,4 +25,7 @@ describe ('Fixnum#ntw') do
     expect(1123456789.ntw()).to(eq("one billion one hundred twenty three million four hundred fifty six thousand seven hundred eighty nine"))
   end
 
+  it('works with zeros') do
+    expect(140456.ntw()).to(eq("one hundred forty thousand four hundred fifty six"))
+  end
 end
