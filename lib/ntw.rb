@@ -3,7 +3,7 @@ class Fixnum
     output_array = []
     ordinals = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
       "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"]
-    tens = ["twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"]
+    tens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"]
     biggies = ["thousand", "million", "billion"]
 
 
@@ -14,7 +14,7 @@ class Fixnum
     else
       self_split = self.to_s().split("")
       output_array.unshift(ordinals[self_split.pop().to_i()])
-      output_array.unshift(tens[self_split.pop().to_i().-(2)])
+      output_array.unshift(tens[self_split.pop().to_i()])
         if self_split.any?()
           output_array.unshift("hundred").unshift(ordinals[(self_split.pop().to_i())])
         end
@@ -27,7 +27,7 @@ class Fixnum
             else
               taat_s = three_at_a_time.to_s().split("")
               output_array.unshift(ordinals[taat_s.pop().to_i()])
-              output_array.unshift(tens[taat_s.pop().to_i().-(2)])
+              output_array.unshift(tens[taat_s.pop().to_i()])
               if taat_s.any?()
                 output_array.unshift("hundred").unshift(ordinals[(taat_s.pop().to_i())])
               end
