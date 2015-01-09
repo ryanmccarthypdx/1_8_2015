@@ -16,12 +16,17 @@ class Fixnum
       output_array.unshift(ordinals[self_split.pop().to_i()])
       output_array.unshift(tens[self_split.pop().to_i()])
         if self_split.any?()
-          output_array.unshift("hundred").unshift(ordinals[(self_split.pop().to_i())])
+          hundred_chkr = self_split.pop().to_i()
+          if hundred_chkr.>(0)
+            output_array.unshift("hundred").unshift(ordinals[hundred_chkr])
+          end
         end
           biggie_counter = 0
           until self_split.empty?()
-            output_array.unshift(biggies[biggie_counter])
             three_at_a_time = self_split.pop(3).join().to_i()
+            if three_at_a_time.>(0)
+              output_array.unshift(biggies[biggie_counter])
+            end
             if three_at_a_time.<(20)
               output_array.unshift(ordinals[three_at_a_time])
             else
